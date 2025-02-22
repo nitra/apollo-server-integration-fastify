@@ -1,0 +1,28 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:js-lib", ":widenPeerDependencies", ":automergeMinor"],
+	"automergeType": "branch",
+	"schedule": "every weekend",
+	"dependencyDashboard": false,
+	"packageRules": [
+		// Bunch up all non-major dependencies into a single PR.  In the common case
+		// where the upgrades apply cleanly, this causes less noise and is resolved faster
+		// than starting a bunch of upgrades in parallel for what may turn out to be
+		// a suite of related packages all released at once.
+		{
+			"groupName": "all non-major dependencies",
+			"matchUpdateTypes": ["patch", "minor"],
+			"groupSlug": "all-minor-patch",
+		},
+		{
+			"matchPackageNames": ["@types/node"],
+			"allowedVersions": "16.x",
+		},
+		// Future patches of @swc/core broke an experimental feature in use by ts-node.
+		// The fix is landed in ts-node but no ETA on a release.
+		{
+			"matchPackageNames": ["@swc/core"],
+			"allowedVersions": "1.3.82",
+		},
+	],
+}

@@ -1,0 +1,17 @@
+{
+	"extends": "@oly_op",
+	"env": {
+		"node": true,
+		"jest": true
+	},
+	"ignorePatterns": ["build", "node_modules"],
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"rules": {
+		"import/no-unresolved": "off",
+		"no-restricted-exports": "off",
+		"@typescript-eslint/require-await": "off",
+		"prefer-arrow/prefer-arrow-functions": "off"
+	}
+}
