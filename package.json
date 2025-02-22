@@ -1,6 +1,6 @@
 {
 	"name": "@nitra/as-integrations-fastify",
-	"version": "3.0.1",
+	"version": "3.0.2",
 	"description": "An Apollo Server integration for use with Fastify",
 	"license": "MIT",
 	"type": "module",
