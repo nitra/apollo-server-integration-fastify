@@ -15,7 +15,7 @@ import { isApolloServerLike } from "./utils.js";
 
 const pluginMetadata: PluginMetadata = {
 	fastify: "^4.4.0",
-	name: "@as-integrations/fastify",
+	name: "@nitra/as-integrations-fastify",
 };
 
 export function fastifyApollo<
